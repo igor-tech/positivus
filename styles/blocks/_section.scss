@@ -4,5 +4,30 @@
   &--hidden-x {
     overflow-x: hidden;
   }
+
+  &__header {
+    display: flex;
+    align-items: start;
+    column-gap: 40px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      row-gap: 30px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 80px;
+
+      @include mobile {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__description {
+    max-width: 580px;
+  }
 }
 

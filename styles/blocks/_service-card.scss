@@ -1,0 +1,105 @@
+.service-card {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+  min-height: 310px;
+  padding: 50px;
+  height: 100%;
+  border-radius: var(--border-radius-lg);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  background-color: var(--color-gray);
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 27px;
+  }
+
+  &--accent-bg {
+    background-color: var(--color-accent);
+  }
+
+  &--dark-bg {
+    background-color: var(--color-dark);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    row-gap: 30px;
+
+    @include mobile {
+      display: contents;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    @include mobile {
+      grid-column: -1 / 1;
+    }
+  }
+
+  &__image {
+    align-self: center;
+
+    @include desktop {
+      max-width: 50%;
+      height: auto;
+    }
+
+    @include mobile {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__link {
+    --serviceCardLinkIconColor: var(--color-accent);
+
+    display: inline-flex;
+    column-gap: 15px;
+    align-items: center;
+    max-width: 164px;
+
+    @include mobile {
+      align-self: end;
+    }
+
+    @include hover {
+      opacity: 0.7;
+    }
+
+    &-label {
+      font-size: 20px;
+      line-height: 1.4;
+
+      @include mobile {
+        @include visually-hidden;
+      }
+    }
+
+    &--light {
+      --serviceCardLinkIconColor: var(--color-dark);
+      color: var(--color-light);
+    }
+
+    &-icon-wrapper {
+      @include flex-center();
+      @include square(41px);
+
+      background-color: currentColor;
+      border-radius: 50%;
+
+      svg {
+        color: var(--serviceCardLinkIconColor)
+      }
+    }
+  }
+}
