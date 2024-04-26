@@ -23,3 +23,15 @@
     display: none !important;
   }
 }
+
+.hide-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar-thumb {
+    display: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+}
